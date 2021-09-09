@@ -78,6 +78,7 @@ namespace AddressBook_Linq
                              .GroupBy(x => x["State"].Equals("Assam")).Count();
             Console.WriteLine(" : {0} ", contacts);
         }
+
         public void SortContacts(DataTable table)
         {
             var contacts = table.Rows.Cast<DataRow>()
