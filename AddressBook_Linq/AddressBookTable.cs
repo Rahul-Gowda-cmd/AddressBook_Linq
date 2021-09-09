@@ -96,6 +96,14 @@ namespace AddressBook_Linq
                              .Where(x => x["AddressBookType"].Equals("Profession")).Count();
             Console.WriteLine("'Profession' : {0} ", ProfessionalContact);
         }
+        public void AddPersonToFriendsAndFamily(DataTable table)
+        {
+            var contacts = table.Rows.Cast<DataRow>()
+                            .Where(x => x["FirstName"].Equals("Rama"));
+
+            Console.WriteLine("\nAdded New Contact in Both Family And Friends");
+            DisplayContacts(contacts.CopyToDataTable());
+        }
     }
     
 }
