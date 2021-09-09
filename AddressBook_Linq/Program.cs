@@ -16,7 +16,8 @@ namespace AddressBook_Linq
             //addressBookTable.DeleteContact(dataTable);
             //addressBookTable.RetrieveContactBelongingToCityOrState(dataTable);
             //addressBookTable.GetSizeByCityOrState(dataTable);
-            addressBookTable.SortContacts(dataTable);
+            //addressBookTable.SortContacts(dataTable);
+            addressBookTable.GetCountByType(dataTable);
         }
     }
 }

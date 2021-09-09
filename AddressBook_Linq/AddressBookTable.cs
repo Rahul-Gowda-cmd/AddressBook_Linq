@@ -78,12 +78,23 @@ namespace AddressBook_Linq
                              .GroupBy(x => x["State"].Equals("Assam")).Count();
             Console.WriteLine(" : {0} ", contacts);
         }
-
         public void SortContacts(DataTable table)
         {
             var contacts = table.Rows.Cast<DataRow>()
                            .OrderBy(x => x.Field<string>("FirstName"));
             DisplayContacts(contacts.CopyToDataTable());
+        }
+        public void GetCountByType(DataTable table)
+        {
+            var friendsContacts = table.Rows.Cast<DataRow>()
+                                         .Where(x => x["AddressBookType"].Equals("Friends")).Count();
+            Console.WriteLine("'Friends' : {0} ", friendsContacts);
+            var familyContact = table.Rows.Cast<DataRow>()
+                             .Where(x => x["AddressBookType"].Equals("Family")).Count();
+            Console.WriteLine("'Family' : {0} ", familyContact);
+            var ProfessionalContact = table.Rows.Cast<DataRow>()
+                             .Where(x => x["AddressBookType"].Equals("Profession")).Count();
+            Console.WriteLine("'Profession' : {0} ", ProfessionalContact);
         }
     }
     
