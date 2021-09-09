@@ -10,7 +10,8 @@ namespace AddressBook_Linq
             Console.WriteLine("Address book program using Linq");
             AddressBookTable addressBookTable = new AddressBookTable();
             DataTable dataTable = addressBookTable.AddAddressBookDataTable();
-            addressBookTable.DisplayContacts(dataTable);
+            //addressBookTable.DisplayContacts(dataTable);
+            addressBookTable.EditContact(dataTable);
         }
     }
 }
